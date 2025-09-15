@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "db:seed": "node --import=./prisma/seed.mjs"
+    "db:seed": "node --import=./prisma/seed.mjs",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma db push && next build"
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",

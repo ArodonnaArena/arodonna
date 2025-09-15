@@ -1,0 +1,21 @@
+{
+  "buildCommand": "prisma generate && prisma db push && next build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "devCommand": "next dev",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "SKIP_ENV_VALIDATION": "true"
+  }
+}
