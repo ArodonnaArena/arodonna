@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 8px;
+}
+
+/* Global light theme to match reference (white background, dark text) */
+body {
+  @apply bg-brand-secondary text-brand-text;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+/* --- Performance-friendly animations --- */
+/* Animated gradient background for hero */
+.gradient-hero {
+  background: radial-gradient(1200px 600px at 10% 0%, rgba(44,62,80,0.08), transparent 50%),
+              radial-gradient(1000px 600px at 90% 10%, rgba(241,196,15,0.12), transparent 55%),
+              linear-gradient(180deg, rgba(44,62,80,0.95), rgba(44,62,80,0.85));
+}
+
+@keyframes gradientPulse {
+  0% { filter: hue-rotate(0deg) saturate(1); }
+  50% { filter: hue-rotate(10deg) saturate(1.2); }
+  100% { filter: hue-rotate(0deg) saturate(1); }
+}
+.animate-gradient {
+  animation: gradientPulse 8s ease-in-out infinite;
+}
+
+/* Subtle float for ambient blobs */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* Gradient text shimmer */
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.animate-gradient-text {
+  animation: gradientText 6s linear infinite;
+}
+
+/* Card shine shimmer */
+@keyframes shimmer {
+  0% { transform: rotate(0deg) translateY(-10%) translateX(-10%); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: rotate(0deg) translateY(30%) translateX(30%); opacity: 0; }
+}
+.animate-shimmer { animation: shimmer 1.5s ease-out; }
+
+/* Subtle glowing shadow */
+.glow {
+  box-shadow: 0 10px 40px rgba(241, 196, 15, 0.08), 0 2px 20px rgba(236,240,241,0.04) inset;
+}
+
+/* Background grid overlay */
+.bg-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
+}
+
+/* Button boost hover */
+.btn-boost {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-boost:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(241, 196, 15, 0.25);
+}
