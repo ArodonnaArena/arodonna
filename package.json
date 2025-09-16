@@ -12,18 +12,24 @@
     "prisma:studio": "prisma studio",
     "db:seed": "node --import=./prisma/seed.mjs",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma db push && next build"
+    "vercel-build": "prisma generate && next build",
+    "db:push": "prisma db push",
+    "db:seed": "node scripts/setup-database.js",
+    "db:setup": "prisma db push && npm run db:seed",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.0",
     "@prisma/client": "^5.18.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@types/pg": "^8.15.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.451.0",
     "next": "^14.2.0",
     "nodemailer": "^6.9.13",
+    "pg": "^8.16.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",
@@ -33,6 +39,7 @@
   "devDependencies": {
     "@mdx-js/loader": "^3.1.1",
     "@types/node": "^20.11.30",
+    "@types/nodemailer": "^7.0.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "autoprefixer": "^10.4.18",

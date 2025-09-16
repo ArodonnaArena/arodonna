@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+
+// Make this page dynamic to avoid static generation issues
+export const dynamic = 'force-dynamic'
 import { listBlogPosts } from '@/lib/blog-db'
 import { BookOpen, Calendar, User, ArrowRight, PenTool, Lightbulb, TrendingUp } from 'lucide-react'
 
@@ -73,8 +76,8 @@ export default async function BlogIndexPage() {
   
   // Use sample posts if no actual posts are available
   const displayPosts = posts.length > 0 ? posts : samplePosts
-  const featuredPosts = displayPosts.filter(post => post.featured)
-  const regularPosts = displayPosts.filter(post => !post.featured)
+  const featuredPosts = displayPosts.filter(post => (post as any).featured)
+  const regularPosts = displayPosts.filter(post => !(post as any).featured)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-brand-secondary via-white to-brand-secondary/50">
@@ -152,7 +155,7 @@ export default async function BlogIndexPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent" />
                       <div className="absolute top-4 left-4">
                         <span className="bg-brand-accent text-brand-text px-3 py-1 rounded-full text-xs font-semibold">
-                          {post.category}
+                          {(post as any).category || 'General'}
                         </span>
                       </div>
                       <div className="absolute top-4 right-4">
@@ -166,13 +169,13 @@ export default async function BlogIndexPage() {
                       <div className="flex items-center gap-4 text-sm text-brand-textLight mb-3">
                         <div className="flex items-center gap-1">
                           <User className="w-4 h-4" />
-                          <span>{post.author}</span>
+                          <span>{(post as any).author || 'Admin'}</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
-                          <span>{post.date}</span>
+                          <span>{(post as any).date || new Date((post as any).createdAt || Date.now()).toLocaleDateString()}</span>
                         </div>
-                        <span>{post.readTime}</span>
+                        <span>{(post as any).readTime || '5 min read'}</span>
                       </div>
                       
                       <h3 className="text-xl font-bold text-brand-text mb-3 group-hover:text-brand-primary transition-colors">
@@ -239,18 +242,18 @@ export default async function BlogIndexPage() {
                       />
                       <div className="absolute top-3 left-3">
                         <span className="bg-white/90 text-brand-primary px-2 py-1 rounded-md text-xs font-medium">
-                          {post.category}
+                          {(post as any).category || 'General'}
                         </span>
                       </div>
                     </div>
                     
                     <div className="p-5">
                       <div className="flex items-center gap-3 text-xs text-brand-textLight mb-3">
-                        <span>{post.author}</span>
+                        <span>{(post as any).author || 'Admin'}</span>
                         <span>•</span>
-                        <span>{post.date}</span>
+                        <span>{(post as any).date || new Date((post as any).createdAt || Date.now()).toLocaleDateString()}</span>
                         <span>•</span>
-                        <span>{post.readTime}</span>
+                        <span>{(post as any).readTime || '5 min read'}</span>
                       </div>
                       
                       <h3 className="font-semibold text-brand-text mb-2 group-hover:text-brand-primary transition-colors line-clamp-2">

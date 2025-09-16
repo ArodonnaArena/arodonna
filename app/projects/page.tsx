@@ -3,12 +3,20 @@ import { listProjects } from '@/lib/projects-db'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Star, Code, Smartphone, Globe, Database, Shield, Zap, ArrowRight } from 'lucide-react'
 
+// Make this page dynamic to avoid static generation issues
+export const dynamic = 'force-dynamic'
+
 type Project = {
   id: string
   name: string
   description: string
   href: string // external demo link (Vercel)
-  image?: string
+  image?: string | null
+  createdAt?: Date
+  category?: string
+  status?: string
+  tech?: string[]
+  featured?: boolean
 }
 
 async function getProjects(): Promise<Project[]> {

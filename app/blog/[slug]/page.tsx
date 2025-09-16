@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+
+// Make this page dynamic to avoid static generation issues
+export const dynamic = 'force-dynamic'
 import remarkGfm from 'remark-gfm'
 import { Button } from '@/components/ui/button'
 import { getBlogPostBySlug } from '@/lib/blog-db'
@@ -645,7 +648,7 @@ Have a specific question or topic you'd like us to address? Contact Arodonna ICT
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <h3 className="text-lg font-semibold text-brand-text mb-4">Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {displayPost.tags.map((tag, index) => (
+                  {displayPost.tags.map((tag: string, index: number) => (
                     <span 
                       key={index}
                       className="px-3 py-1 bg-brand-secondary/30 text-brand-text text-sm rounded-full hover:bg-brand-accent/20 transition-colors cursor-pointer"
