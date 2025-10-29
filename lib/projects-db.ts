@@ -14,7 +14,7 @@ export async function listProjects() {
   }
   
   try {
-    return prisma.project.findMany({ orderBy: { createdAt: 'desc' } })
+    return await prisma.project.findMany({ orderBy: { createdAt: 'desc' } })
   } catch (error) {
     console.warn('Database connection failed, returning empty projects array')
     return []

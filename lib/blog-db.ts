@@ -19,7 +19,7 @@ export async function listBlogPosts(options?: { includeUnpublished?: boolean }) 
   
   try {
     const where = options?.includeUnpublished ? {} : { published: true }
-    return prisma.blogPost.findMany({ where, orderBy: { createdAt: 'desc' } })
+    return await prisma.blogPost.findMany({ where, orderBy: { createdAt: 'desc' } })
   } catch (error) {
     console.warn('Database connection failed, returning empty blog posts array')
     return []
@@ -33,7 +33,7 @@ export async function getBlogPostBySlug(slug: string) {
   }
   
   try {
-    return prisma.blogPost.findUnique({ where: { slug } })
+    return await prisma.blogPost.findUnique({ where: { slug } })
   } catch (error) {
     console.warn('Database connection failed, returning null for blog post')
     return null
