@@ -4,6 +4,7 @@ import { listProjects } from '@/lib/projects-db'
 // Make this page dynamic to avoid static generation issues
 export const dynamic = 'force-dynamic'
 import Image from 'next/image'
+import Link from 'next/link'
 import { CheckCircle, Users, Award, Clock, Star, Mail, Phone, MapPin, Play, ArrowRight, Shield, Zap, Briefcase } from 'lucide-react'
 
 export default async function HomePage() {
@@ -452,8 +453,8 @@ export default async function HomePage() {
             <Button className="bg-brand-accent hover:bg-brand-accentDark text-brand-text px-8 py-4 text-lg">
               Get Free Consultation
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-primary px-8 py-4 text-lg">
-              View Our Portfolio
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-brand-primary px-8 py-4 text-lg">
+              <Link href="/portfolio">View Our Portfolio</Link>
             </Button>
           </div>
         </div>

@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <nav className="hidden md:flex items-center gap-8">
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/">Home</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/projects">Projects</a>
+                  <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/portfolio">Portfolio</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/about">About</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/blog">Blog</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/contact">Contact</a>
