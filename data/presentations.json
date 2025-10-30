@@ -1,18 +1,22 @@
 [
   {
     "title": "Arome",
-    "href": "/presentations/arome.pdf"
+    "href": "/presentations/arome.pdf",
+    "thumb": "/presentations/thumbs/arome.jpg"
   },
   {
     "title": "HF Radio Antennas and SSB Functions and Applications",
-    "href": "/presentations/hf-radio-antennas-ssb-functions.pdf"
+    "href": "/presentations/hf-radio-antennas-ssb-functions.pdf",
+    "thumb": "/presentations/thumbs/hf-radio-antennas-ssb-functions.jpg"
   },
   {
     "title": "Revolutionizing Customer Experience — A Strategic Imperative",
-    "href": "/presentations/Revolutionizing-Customer-Experience-A-Strategic-Imperative.pdf"
+    "href": "/presentations/Revolutionizing-Customer-Experience-A-Strategic-Imperative.pdf",
+    "thumb": "/presentations/thumbs/Revolutionizing-Customer-Experience-A-Strategic-Imperative.jpg"
   },
   {
     "title": "Sustainable Pavements: Durability and Cost-Effectiveness of Plastic-Modified Asphalt",
-    "href": "/presentations/sustainable-pavements-plastic-modified-asphalt.pdf"
+    "href": "/presentations/sustainable-pavements-plastic-modified-asphalt.pdf",
+    "thumb": "/presentations/thumbs/sustainable-pavements-plastic-modified-asphalt.jpg"
   }
 ]
