@@ -78,7 +78,7 @@ export default async function PortfolioPage() {
                   const url = new URL(p.href, 'http://dummy')
                   const name = url.pathname.split('/').pop() || ''
                   const base = name.replace(/\.[^.]+$/, '')
-                  return `/presentations/${base}.jpg`
+                  return `/presentations/thumbs/${base}.jpg`
                 } catch {
                   return '/pdf-placeholder.svg'
                 }
