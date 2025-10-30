@@ -47,9 +47,9 @@ export default function ContactPage() {
             {/* Info Cards */}
             <div className="space-y-6">
               {[
-                { icon: Phone, title: 'Phone', info: '+234 (0) 123 456 7890' },
-                { icon: Mail, title: 'Email', info: 'info@arodonnaictarena.com' },
-                { icon: MapPin, title: 'Office', info: 'Port Harcourt, Rivers State, Nigeria' },
+                { icon: Phone, title: 'Phone', info: '07038352400' },
+                { icon: Mail, title: 'Email', info: 'arodonnaltd@gmail.com' },
+                { icon: MapPin, title: 'Office', info: 'Makurdi, Benue State' },
                 { icon: Clock, title: 'Working Hours', info: 'Mon - Sat: 9:00 AM - 6:00 PM' },
               ].map((item, index) => (
                 <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-gray-100 flex items-start gap-4">
