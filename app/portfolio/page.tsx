@@ -70,18 +70,41 @@ export default async function PortfolioPage() {
               { title: 'Sample Deck 1', desc: 'Replace with your presentation', href: '#' },
               { title: 'Sample Deck 2', desc: 'Replace with your presentation', href: '#' },
               { title: 'Sample Deck 3', desc: 'Replace with your presentation', href: '#' },
-            ]).map((p, i) => (
-              <article key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-card-hover transition-all">
-                <h3 className="font-semibold text-brand-text mb-2">{p.title}</h3>
-                {p.desc && <p className="text-brand-textLight mb-4">{p.desc}</p>}
-                <Button asChild variant="outline">
-                  <Link href={p.href}>
-                    View Deck
-                    <ArrowRight className="w-4 h-4 ml-2" />
+            ]).map((p, i) => {
+              const deriveThumb = () => {
+                const anyP: any = p as any
+                if (anyP.thumb) return anyP.thumb as string
+                try {
+                  const url = new URL(p.href, 'http://dummy')
+                  const name = url.pathname.split('/').pop() || ''
+                  const base = name.replace(/\.[^.]+$/, '')
+                  return `/presentations/${base}.jpg`
+                } catch {
+                  return '/pdf-placeholder.svg'
+                }
+              }
+              const thumbSrc = deriveThumb()
+              return (
+                <article key={i} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all">
+                  <Link href={p.href} target="_blank" rel="noopener noreferrer">
+                    <div className="relative h-40 w-full bg-brand-secondary/30">
+                      <Image src={thumbSrc} alt={p.title} fill className="object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                    </div>
                   </Link>
-                </Button>
-              </article>
-            ))}
+                  <div className="p-6">
+                    <h3 className="font-semibold text-brand-text mb-1">{p.title}</h3>
+                    {p.desc && <p className="text-brand-textLight mb-4 text-sm">{p.desc}</p>}
+                    <Button asChild variant="outline">
+                      <Link href={p.href} target="_blank" rel="noopener noreferrer">
+                        View Deck
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
