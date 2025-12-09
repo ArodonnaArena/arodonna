@@ -415,7 +415,7 @@ export default async function HomePage() {
             {[ 
               { name: 'Engr. A.A muhammad', role: 'Chief Executive Officer' },
               { name: 'Donna Ocheje', role: 'Operations Manager' },
-              { name: 'Emmanuel Ali Ochowechi', role: 'Junior Cloud Administrator' },
+              { name: 'Emmanuel Ochowechi Ali', role: 'Database Administration / Azure Cloud Administrator' },
               { name: 'Emmanuel Idoga', role: 'Cloud Operations Assistant' },
               { name: 'Engr.Ebenezer Makanjuola', role: 'Data Engineer' },
               { name: 'Georgelyn Ogabidu', role: 'Risk Access Manager' }
