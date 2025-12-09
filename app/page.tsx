@@ -5,7 +5,7 @@ import { listProjects } from '@/lib/projects-db'
 export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, Users, Award, Clock, Star, Mail, Phone, MapPin, Play, ArrowRight, Shield, Zap, Briefcase } from 'lucide-react'
+import { CheckCircle, Users, Award, Clock, Star, Mail, Phone, MapPin, Play, ArrowRight, Shield, Zap, Briefcase, Cloud, Database, Sparkles, Target } from 'lucide-react'
 
 export default async function HomePage() {
   // Fetch a few projects server-side for the teaser (no client JS)
@@ -14,76 +14,99 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero Section - Matching Reference Design */}
-      <section className="relative bg-gradient-hero py-20 lg:py-32 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-50">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23F1C40F' fillOpacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }} />
-        </div>
-        
+      {/* Hero Section - Refined Layout */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a1f2f] via-[#22283a] to-[#3e475c] py-24 lg:py-28 text-white">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 45%), radial-gradient(circle at 75% 20%, rgba(255,255,255,0.04), transparent 40%)`
+        }} />
+        <div className="absolute -right-24 top-12 w-64 h-64 bg-brand-accent/10 blur-3xl" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-brand-accent/10 text-brand-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Star className="w-4 h-4" />
-                <span>Creative & Innovative</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Creative & Innovative
-                <br />
-                <span className="text-brand-accent">Digital Solution</span>
-              </h1>
-              
-              <p className="text-lg text-brand-secondary/90 mb-8 max-w-xl">
-                Transform your business with cutting-edge technology solutions. We provide comprehensive 
-                ICT services, training, and consultancy to drive your success.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button className="bg-gradient-button hover:bg-gradient-button-hover text-brand-text px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-accent hover:shadow-accent-strong transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                  <span>Free Consultation</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-primary px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2">
-                  <Play className="w-5 h-5" />
-                  <span>Watch Demo</span>
-                </button>
+          <div className="grid lg:grid-cols-12 gap-14 items-center">
+            <div className="lg:col-span-7 space-y-8">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur border border-white/10">
+                <Sparkles className="w-4 h-4" />
+                <span>Cloud • Data • Security • Training</span>
               </div>
 
-              {/* Stats - Matching Reference Image */}
-              <div className="grid grid-cols-3 gap-6">
-                {[
-                  { label: 'Happy Clients', value: '12345', color: 'bg-blue-500' },
-                  { label: 'Projects Done', value: '12345', color: 'bg-green-500' },
-                  { label: 'Awards Won', value: '12345', color: 'bg-purple-500' }
-                ].map((stat, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4 shadow-lg">
-                    <div className={`w-3 h-3 ${stat.color} rounded-full mb-2`}></div>
-                    <div className="text-2xl font-bold text-brand-primary">{stat.value}</div>
-                    <div className="text-sm text-brand-textLight">{stat.label}</div>
+              <div className="space-y-5">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05]">
+                  Modern ICT Solutions for <span className="text-brand-accent">Ambitious Teams</span>
+                </h1>
+                <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+                  We architect cloud-first, secure, and data-driven experiences that keep your business always-on. From Azure landing zones to resilient database operations, our experts deliver measurable outcomes.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-brand-accent hover:bg-brand-accent/90 text-brand-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_14px_36px_rgba(0,0,0,0.35)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <span>Book a strategy call</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <button className="border border-white/30 text-white hover:bg-white hover:text-brand-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur">
+                    <Play className="w-5 h-5" />
+                    <span>See how we work</span>
+                  </button>
+                </div>
+                <div className="text-sm text-white/80 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-brand-accent" />
+                  <span>Trusted by 40+ cloud-first companies and fast-moving teams</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[{ label: 'Cloud migrations', value: '40+' }, { label: 'Secured workloads', value: '120+' }, { label: 'Data platforms', value: '25+' }, { label: 'Training cohorts', value: '60+' }].map((stat) => (
+                  <div key={stat.label} className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur">
+                    <div className="text-xs text-white/70">{stat.label}</div>
+                    <div className="text-xl font-semibold">{stat.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[{ icon: Cloud, title: 'Cloud Reliability', desc: '99.9% uptime architectures' }, { icon: Shield, title: 'Security-first', desc: 'Governance & compliance built-in' }, { icon: Zap, title: 'Faster Delivery', desc: 'Launch in weeks, not months' }].map((item, index) => (
+                  <div key={index} className="bg-white/12 border border-white/15 rounded-xl p-5 backdrop-blur shadow-lg">
+                    <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-3">
+                      <item.icon className="w-7 h-7" />
+                    </div>
+                    <div className="text-lg font-semibold">{item.title}</div>
+                    <p className="text-sm text-white/75 mt-2 leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right Content - Hero Image */}
-            <div className="relative">
-              <div className="relative z-10">
-                <Image
-                  src="/aromeheroimage.png"
-                  alt="Professional digital solutions"
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-primary-strong"
-                />
+            <div className="lg:col-span-5 lg:pl-6">
+              <div className="relative max-w-md ml-auto">
+                <div className="absolute -inset-6 bg-black/10 blur-3xl rounded-3xl" />
+                <div className="relative bg-white/12 border border-white/20 rounded-2xl p-6 backdrop-blur-md shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <p className="text-sm text-white/70">Delivery score</p>
+                      <p className="text-3xl font-bold">99.5%</p>
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center">
+                      <Target className="w-6 h-6 text-brand-accent" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[{ label: 'On-time launches', value: '96%' }, { label: 'SLA adherence', value: '99.9%' }, { label: 'Rollback incidents', value: '<1%' }, { label: 'C-SAT', value: '4.9/5' }].map((stat) => (
+                      <div key={stat.label} className="rounded-xl border border-white/15 bg-white/8 px-4 py-3">
+                        <div className="text-xs text-white/70">{stat.label}</div>
+                        <div className="text-xl font-semibold">{stat.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-accent/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-primary/20 rounded-full blur-xl"></div>
+              <div className="flex flex-wrap gap-3 mt-6">
+                {['Azure landing zones', 'Database reliability', 'Automation & DevOps', 'Security posture reviews', 'Staff upskilling'].map((pill) => (
+                  <span key={pill} className="px-4 py-2 rounded-full border border-white/15 bg-white/10 text-sm text-white/80 backdrop-blur">
+                    {pill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -276,7 +299,21 @@ export default async function HomePage() {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
+            {[ 
+              {
+                title: 'Azure Cloud',
+                desc: 'Landing zones, governance, security, and cost optimization tailored to Azure.',
+                icon: Cloud,
+                color: 'bg-sky-100 text-sky-600',
+                gradient: 'from-sky-500 to-sky-600'
+              },
+              {
+                title: 'Database Administration',
+                desc: 'Reliable relational and cloud database operations, backups, and performance tuning.',
+                icon: Database,
+                color: 'bg-indigo-100 text-indigo-600',
+                gradient: 'from-indigo-500 to-indigo-600'
+              },
               {
                 title: 'Cyber Security',
                 desc: 'Comprehensive security solutions to protect your digital assets and sensitive data.',
@@ -354,6 +391,46 @@ export default async function HomePage() {
             <button className="bg-gradient-button hover:bg-gradient-button-hover text-brand-text px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-accent hover:shadow-accent-strong transform hover:-translate-y-1">
               View All Services
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-brand-secondary/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-brand-primary/10 text-brand-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Users className="w-4 h-4" />
+              <span>Our Team</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-brand-text mb-4 leading-tight">
+              People behind the outcomes
+            </h2>
+            <p className="text-lg text-brand-textLight max-w-2xl mx-auto">
+              A multidisciplinary crew delivering cloud reliability, data excellence, and operational rigor.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[ 
+              { name: 'Engr. A.A muhammad', role: 'Chief Executive Officer' },
+              { name: 'Donna Ocheje', role: 'Operations Manager' },
+              { name: 'Emmanuel Ali Ochewechi', role: 'Junior Cloud Administrator' },
+              { name: 'Emmanuel Idoka', role: 'Cloud Operations Assistant' },
+              { name: 'Engr.Ebenezer Makanjuola', role: 'Data Engineer' },
+              { name: 'Georgelyn Ogabidu', role: 'Risk Access Manager' }
+            ].map((person) => (
+              <div key={person.name} className="bg-white rounded-2xl p-6 shadow-card border border-gray-100 hover:shadow-card-hover transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mb-4 font-semibold">
+                  {person.name.split(' ').filter(Boolean).map((p) => p[0]).join('').slice(0, 2)}
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-xl font-bold text-brand-text">{person.name}</h3>
+                  <p className="text-brand-accent font-semibold">{person.role}</p>
+                  <p className="text-sm text-brand-textLight">Driving excellence across delivery, governance, and customer outcomes.</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
