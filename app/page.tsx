@@ -292,66 +292,80 @@ export default async function HomePage() {
               <span className="text-brand-accent">Successful Business</span>
             </h2>
             <p className="text-lg text-brand-textLight max-w-2xl mx-auto">
-              We provide comprehensive technology solutions tailored to meet your business needs 
-              and drive digital transformation.
+              From cloud computing and IT infrastructure to website and mobile development, data,
+              design, training, and technical support, we serve businesses, institutions, and organisations.
             </p>
           </div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[ 
+            {[
               {
-                title: 'Azure Cloud',
-                desc: 'Landing zones, governance, security, and cost optimization tailored to Azure.',
+                title: 'Cloud Computing & Azure',
+                desc: 'Azure setup, administration, infrastructure provisioning, resource management, and cloud deployment support.',
                 icon: Cloud,
                 color: 'bg-sky-100 text-sky-600',
                 gradient: 'from-sky-500 to-sky-600'
               },
               {
-                title: 'Database Administration',
-                desc: 'Reliable relational and cloud database operations, backups, and performance tuning.',
+                title: 'Cloud Infrastructure',
+                desc: 'Cloud architecture, virtual networks, subnets, network security, multi-tier deployments, and troubleshooting.',
                 icon: Database,
                 color: 'bg-indigo-100 text-indigo-600',
                 gradient: 'from-indigo-500 to-indigo-600'
               },
               {
-                title: 'Cyber Security',
-                desc: 'Comprehensive security solutions to protect your digital assets and sensitive data.',
-                icon: Shield,
-                color: 'bg-red-100 text-red-600',
-                gradient: 'from-red-500 to-red-600'
-              },
-              {
-                title: 'Data Analytics',
-                desc: 'Transform raw data into actionable insights to drive informed business decisions.',
-                icon: Star,
-                color: 'bg-blue-100 text-blue-600',
-                gradient: 'from-blue-500 to-blue-600'
-              },
-              {
-                title: 'Web Development',
-                desc: 'Modern, responsive websites and web applications built with cutting-edge tech.',
+                title: 'IaC & Cloud Automation',
+                desc: 'Reusable ARM templates and Azure CLI, PowerShell, and Bash automation for consistent deployments.',
                 icon: Zap,
                 color: 'bg-green-100 text-green-600',
                 gradient: 'from-green-500 to-green-600'
               },
               {
-                title: 'App Development',
-                desc: 'Native and cross-platform mobile applications for iOS and Android platforms.',
+                title: 'Identity, Security & Governance',
+                desc: 'Entra ID, RBAC, MFA, Conditional Access, Key Vault, Defender for Cloud, and Azure Policy.',
+                icon: Shield,
+                color: 'bg-red-100 text-red-600',
+                gradient: 'from-red-500 to-red-600'
+              },
+              {
+                title: 'Backup, Monitoring & Cost',
+                desc: 'Azure Backup, recovery support, Azure Monitor, Log Analytics, resource health, and cost management.',
+                icon: Star,
+                color: 'bg-blue-100 text-blue-600',
+                gradient: 'from-blue-500 to-blue-600'
+              },
+              {
+                title: 'DevOps & Systems Support',
+                desc: 'Azure DevOps, CI/CD pipelines, Windows and Linux administration, technical documentation, and consultancy.',
                 icon: Briefcase,
                 color: 'bg-purple-100 text-purple-600',
                 gradient: 'from-purple-500 to-purple-600'
               },
               {
-                title: 'SEO Optimization',
-                desc: 'Improve your search engine rankings and increase organic traffic to your site.',
-                icon: Award,
+                title: 'Website & Mobile Development',
+                desc: 'Responsive website design, web application development, and mobile solutions for iOS and Android.',
+                icon: Zap,
+                color: 'bg-cyan-100 text-cyan-600',
+                gradient: 'from-cyan-500 to-cyan-600'
+              },
+              {
+                title: 'Database & Data Analytics',
+                desc: 'Database administration and data analysis, visualisation, and reporting to support informed decisions.',
+                icon: Database,
+                color: 'bg-indigo-100 text-indigo-600',
+                gradient: 'from-indigo-500 to-indigo-600'
+              },
+              {
+                title: 'Cybersecurity, SEO & UI/UX',
+                desc: 'Security support, search engine optimisation, and user-focused interface and experience design.',
+                icon: Shield,
                 color: 'bg-orange-100 text-orange-600',
                 gradient: 'from-orange-500 to-orange-600'
               },
               {
-                title: 'UI/UX Design',
-                desc: 'Create intuitive and engaging user experiences that delight your customers.',
+                title: 'ICT Training & Hardware Support',
+                desc: 'Practical ICT training, IT consultancy, computer and electronics repairs, and hardware sales.',
                 icon: Users,
                 color: 'bg-pink-100 text-pink-600',
                 gradient: 'from-pink-500 to-pink-600'
@@ -375,10 +389,10 @@ export default async function HomePage() {
                 </p>
                 
                 {/* CTA Button */}
-                <button className="text-brand-primary font-semibold flex items-center gap-2 group-hover:text-brand-accent transition-colors">
+                <Link href="/services" className="text-brand-primary font-semibold flex items-center gap-2 group-hover:text-brand-accent transition-colors">
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
                 
                 {/* Hover Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
@@ -388,9 +402,9 @@ export default async function HomePage() {
           
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <button className="bg-gradient-button hover:bg-gradient-button-hover text-brand-text px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-accent hover:shadow-accent-strong transform hover:-translate-y-1">
+            <Link href="/services" className="inline-flex bg-gradient-button hover:bg-gradient-button-hover text-brand-text px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-accent hover:shadow-accent-strong transform hover:-translate-y-1">
               View All Services
-            </button>
+            </Link>
           </div>
         </div>
       </section>

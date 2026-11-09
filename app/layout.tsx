@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {/* Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/">Home</a>
+                  <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/services">Services</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/projects">Projects</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/portfolio">Portfolio</a>
                   <a className="text-brand-text hover:text-brand-primary transition-colors font-medium" href="/about">About</a>
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <h3 className="font-semibold mb-4 text-brand-accent">Quick Links</h3>
                   <ul className="space-y-2">
                     <li><a href="/about" className="text-brand-secondary/80 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="/services" className="text-brand-secondary/80 hover:text-white transition-colors">Our Services</a></li>
                     <li><a href="/projects" className="text-brand-secondary/80 hover:text-white transition-colors">Our Projects</a></li>
                     <li><a href="/blog" className="text-brand-secondary/80 hover:text-white transition-colors">Blog</a></li>
                     <li><a href="/contact" className="text-brand-secondary/80 hover:text-white transition-colors">Contact</a></li>
@@ -119,10 +121,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div>
                   <h3 className="font-semibold mb-4 text-brand-accent">Services</h3>
                   <ul className="space-y-2">
-                    <li><a href="#" className="text-brand-secondary/80 hover:text-white transition-colors">Web Development</a></li>
-                    <li><a href="#" className="text-brand-secondary/80 hover:text-white transition-colors">Mobile Apps</a></li>
-                    <li><a href="#" className="text-brand-secondary/80 hover:text-white transition-colors">IT Consulting</a></li>
-                    <li><a href="#" className="text-brand-secondary/80 hover:text-white transition-colors">Training</a></li>
+                    <li><a href="/services" className="text-brand-secondary/80 hover:text-white transition-colors">Azure & Cloud</a></li>
+                    <li><a href="/services" className="text-brand-secondary/80 hover:text-white transition-colors">Infrastructure & Automation</a></li>
+                    <li><a href="/services" className="text-brand-secondary/80 hover:text-white transition-colors">DevOps & CI/CD</a></li>
+                    <li><a href="/services" className="text-brand-secondary/80 hover:text-white transition-colors">Systems Administration</a></li>
                   </ul>
                 </div>
               </div>

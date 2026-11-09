@@ -1,6 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Award, Users, Target, Heart, Calendar, MapPin, Phone, Mail, CheckCircle, Star, Zap, Shield } from 'lucide-react'
+import { ArrowRight, Award, Users, Target, Heart, Calendar, MapPin, Phone, Mail, CheckCircle, Star, Zap, Shield } from 'lucide-react'
 
 export default function AboutPage() {
   return (
@@ -144,29 +145,42 @@ export default function AboutPage() {
               What We <span className="text-brand-accent">Do</span>
             </h2>
             <p className="text-lg text-brand-textLight max-w-2xl mx-auto">
-              We offer comprehensive ICT services designed to meet your business and personal technology needs
+              We support businesses, institutions and organisations across cloud and infrastructure,
+              digital products, data, training and hands-on IT support.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: 'Training & Consultancy',
-                desc: 'Hands-on ICT training and professional consulting services tailored to your specific needs and goals.',
+                title: 'Cloud & Infrastructure',
+                desc: 'Microsoft Azure cloud services, infrastructure design and administration for business and organisational workloads.',
                 icon: Users,
-                features: ['Software Development Training', 'IT Consulting', 'Digital Transformation', 'Technical Support']
+                features: ['Azure setup and administration', 'Virtual networks and infrastructure', 'Cloud deployment support', 'Systems administration']
               },
               {
-                title: 'Software Solutions',
-                desc: 'Custom applications built with modern technologies and industry best practices for optimal performance.',
+                title: 'Automation & DevOps',
+                desc: 'Infrastructure as Code and DevOps practices to improve deployment consistency and operational efficiency.',
                 icon: Zap,
-                features: ['Web Development', 'Mobile Apps', 'Database Systems', 'API Development']
+                features: ['ARM templates and Azure CLI', 'PowerShell and Bash automation', 'Azure DevOps and Pipelines', 'YAML CI/CD workflows']
               },
               {
-                title: 'Hardware Services',
-                desc: 'Professional electronics repairs and sales of computers, accessories, and technology equipment.',
+                title: 'Security & Cloud Operations',
+                desc: 'Cloud and infrastructure security, identity, monitoring and operational support.',
                 icon: Shield,
-                features: ['Computer Repairs', 'Hardware Sales', 'System Maintenance', 'Technical Setup']
+                features: ['Cybersecurity and network security', 'Entra ID, RBAC and MFA', 'Azure Policy and Key Vault', 'Monitoring, backup and cost management']
+              },
+              {
+                title: 'Digital Products & Data',
+                desc: 'Digital experiences, software and data services to support organisational goals.',
+                icon: Zap,
+                features: ['Website design and development', 'Mobile applications', 'Database administration', 'Data analytics and reporting']
+              },
+              {
+                title: 'Design, Training & IT Support',
+                desc: 'Practical technology, design and support services for organisations and their teams.',
+                icon: Users,
+                features: ['SEO and UI/UX design', 'ICT training and consultancy', 'Computer and electronics repairs', 'Hardware and accessories sales']
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-gray-100">
@@ -186,6 +200,12 @@ export default function AboutPage() {
                 </ul>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/services" className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white transition hover:bg-brand-primary/90">
+              Explore all services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
